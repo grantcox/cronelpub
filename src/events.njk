@@ -1,0 +1,37 @@
+---
+layout: base.njk
+title: Events
+permalink: /events/
+description: Upcoming appearances, readings, and book signings.
+---
+<h1>Events</h1>
+
+<h2>Upcoming</h2>
+{% if collections.upcomingEvents.length %}
+<ul class="event-list">
+  {% for e in collections.upcomingEvents %}
+  <li class="event">
+    <h3>{{ e.data.title }}</h3>
+    <p class="when">{{ e.data.date | readableDate }}</p>
+    {% if e.data.location %}<p class="where">{{ e.data.location }}</p>{% endif %}
+    {{ e.templateContent | safe }}
+    {% if e.data.link %}<p><a href="{{ e.data.link }}">More details &amp; tickets</a></p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p class="empty">No upcoming events are scheduled right now. Please check back soon.</p>
+{% endif %}
+
+{% if collections.pastEvents.length %}
+<h2>Past events</h2>
+<ul class="event-list">
+  {% for e in collections.pastEvents %}
+  <li class="event past">
+    <h3>{{ e.data.title }}</h3>
+    <p class="when">{{ e.data.date | readableDate }}</p>
+    {% if e.data.location %}<p class="where">{{ e.data.location }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>
+{% endif %}

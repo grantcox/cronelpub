@@ -1,0 +1,10 @@
+---
+layout: base.njk
+---
+<h1>About {{ site.author }}</h1>
+
+{% if portrait %}
+<img class="portrait" src="{{ portrait }}" alt="{{ site.author }}" onerror="this.style.display='none'" />
+{% endif %}
+
+{{ content | safe }}

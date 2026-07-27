@@ -1,0 +1,13 @@
+---
+layout: base.njk
+---
+<div class="book">
+  {% if cover %}<img src="{{ cover }}" alt="Cover of {{ site.bookTitle }}" onerror="this.style.display='none'" />{% endif %}
+  <div class="book-body">
+    <h1>{{ site.bookTitle }}</h1>
+    {% if site.bookSubtitle %}<p class="subtitle">{{ site.bookSubtitle }}</p>{% endif %}
+    {% if hook %}<p class="hook">{{ hook }}</p>{% endif %}
+    {{ content | safe }}
+    <p class="buy"><a class="btn" href="{{ site.buyUrl }}">{{ site.buyLabel }}</a></p>
+  </div>
+</div>

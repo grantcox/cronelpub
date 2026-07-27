@@ -1,0 +1,101 @@
+# Sveltia CMS configuration — the browser-based editor.
+# The only line you must edit is "repo" below (your GitHub username / repo name).
+
+backend:
+  name: github
+  repo: grantcox/cronelpub
+  branch: main
+  # Points at the tiny (free) login helper you deploy once. See SETUP.md.
+  base_url: https://YOUR-AUTH-WORKER.workers.dev
+
+# Uploaded images are committed here, and served from this URL on the site.
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+# Show a friendly editing summary and keep the UI simple.
+site_url: https://cronelpub.com
+
+collections:
+  # ---- Fixed pages ---------------------------------------------------
+  - name: pages
+    label: "Pages"
+    delete: false
+    files:
+      - name: home
+        label: "Home page"
+        file: "src/index.md"
+        fields:
+          - { name: layout, widget: hidden, default: "base.njk" }
+          - { name: permalink, widget: hidden, default: "/" }
+          - { name: title, label: "Title (browser tab)", widget: string }
+          - { name: hook, label: "Featured line", widget: string, required: false }
+          - { name: intro, label: "Welcome message", widget: text }
+
+      - name: about
+        label: "About page"
+        file: "src/about.md"
+        fields:
+          - { name: layout, widget: hidden, default: "about.njk" }
+          - { name: permalink, widget: hidden, default: "/about/" }
+          - { name: title, label: "Title (browser tab)", widget: string }
+          - { name: description, label: "Search-engine description", widget: string }
+          - { name: portrait, label: "Author photo", widget: image, required: false }
+          - { name: body, label: "About text", widget: markdown }
+
+      - name: book
+        label: "The Book page"
+        file: "src/book.md"
+        fields:
+          - { name: layout, widget: hidden, default: "book.njk" }
+          - { name: permalink, widget: hidden, default: "/book/" }
+          - { name: title, label: "Title (browser tab)", widget: string }
+          - { name: description, label: "Search-engine description", widget: string }
+          - { name: cover, label: "Book cover image", widget: image, required: false }
+          - { name: hook, label: "Opening line", widget: string, required: false }
+          - { name: body, label: "Book description", widget: markdown }
+
+      - name: contact
+        label: "Contact page"
+        file: "src/contact.md"
+        fields:
+          - { name: layout, widget: hidden, default: "base.njk" }
+          - { name: permalink, widget: hidden, default: "/contact/" }
+          - { name: description, widget: hidden, default: "Get in touch with the author." }
+          - { name: title, label: "Page heading", widget: string }
+          - { name: body, label: "Contact text", widget: markdown }
+
+  # ---- Site-wide details ---------------------------------------------
+  - name: settings
+    label: "Site details"
+    delete: false
+    files:
+      - name: general
+        label: "Name, book title & buy link"
+        file: "src/_data/site.json"
+        fields:
+          - { name: title, label: "Site title", widget: string }
+          - { name: author, label: "Author name", widget: string }
+          - { name: tagline, label: "Tagline (under your name)", widget: string }
+          - { name: bookTitle, label: "Book title", widget: string }
+          - { name: bookSubtitle, label: "Book subtitle", widget: string, required: false }
+          - { name: publisher, label: "Publisher", widget: string, required: false }
+          - { name: buyUrl, label: "Where to buy (link)", widget: string }
+          - { name: buyLabel, label: "Buy button text", widget: string }
+          - { name: email, label: "Contact email", widget: string }
+          - { name: url, label: "Website address", widget: string }
+
+  # ---- Events (add / edit / remove) ----------------------------------
+  - name: events
+    label: "Events"
+    label_singular: "Event"
+    folder: "src/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { name: title, label: "Event name", widget: string }
+      - { name: date, label: "Date & time", widget: datetime, picker_utc: false, format: "YYYY-MM-DDTHH:mm:ss", date_format: "MMM D, YYYY", time_format: "h:mm A" }
+      - { name: location, label: "Location", widget: string, required: false }
+      - { name: link, label: "Link (tickets / details)", widget: string, required: false }
+      - { name: body, label: "Details", widget: markdown, required: false }
