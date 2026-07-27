@@ -6,7 +6,7 @@ backend:
   repo: grantcox/cronelpub
   branch: main
   # Points at the tiny (free) login helper you deploy once. See SETUP.md.
-  base_url: https://YOUR-AUTH-WORKER.workers.dev
+  base_url: https://sveltia-cms-auth.grant-cox.workers.dev
 
 # Uploaded images are committed here, and served from this URL on the site.
 media_folder: "src/assets/uploads"
