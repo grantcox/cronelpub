@@ -29,7 +29,9 @@
 
     <footer class="site-footer">
       <p>&copy; {{ site.author }}. All rights reserved.</p>
-      {% if site.publisher %}<p class="imprint">Published by {{ site.publisher }}</p>{% endif %}
+      <p class="imprint">
+        <img class="pub-logo" src="/assets/cronel-publishing.jpg" alt="{{ site.publisher }}" />
+      </p>
     </footer>
   </body>
 </html>
