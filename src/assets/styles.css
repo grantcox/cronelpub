@@ -1,6 +1,17 @@
 /* ---- Warm, minimal author-site theme -------------------------------- */
+
+/* "Augusta" — the calligraphic display face used for the name and nav.
+   Served straight from the TTF (works in every modern browser). */
+@font-face {
+  font-family: "Augusta";
+  src: url("/assets/Augusta.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --bg: #faf7f2;
+  --bg: #f2efe8;
   --surface: #ffffff;
   --ink: #2b2622;
   --muted: #6f665d;
@@ -8,6 +19,7 @@
   --accent-ink: #ffffff;
   --line: #e7ded2;
   --maxw: 46rem;
+  --display: "Augusta", Georgia, "Times New Roman", serif;
   --serif: Georgia, "Times New Roman", serif;
   --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
@@ -51,9 +63,9 @@ body {
   padding: 1.75rem 1.25rem 1rem;
 }
 .brand {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-family: var(--display);
+  font-size: 1.9rem;
+  font-weight: 400;
   letter-spacing: 0.01em;
   color: var(--ink);
   text-decoration: none;
@@ -61,12 +73,13 @@ body {
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.1rem;
+  gap: 1.4rem;
 }
 .site-nav a {
+  font-family: var(--display);
   color: var(--muted);
   text-decoration: none;
-  font-size: 0.98rem;
+  font-size: 1.2rem;
 }
 .site-nav a:hover { color: var(--accent); }
 
@@ -82,7 +95,8 @@ h1, h2, h3 {
   line-height: 1.2;
   color: var(--ink);
 }
-h1 { font-size: 2.15rem; margin: 0.5rem 0 0.75rem; }
+h1 { font-family: var(--display); font-weight: 400; font-size: 2.6rem; margin: 0.5rem 0 0.75rem; }
+.display { font-family: var(--display); font-weight: 400; }
 h2 { font-size: 1.5rem; margin: 2rem 0 0.5rem; }
 a { color: var(--accent); }
 
@@ -131,13 +145,34 @@ p { margin: 0 0 1.1rem; }
 /* ---- Hero (home) ----------------------------------------------------- */
 .hero {
   text-align: center;
-  padding: 1.5rem 0 1rem;
+  padding: 1rem 0 1rem;
+}
+.hero h1.display {
+  font-size: clamp(2.1rem, 9vw, 3.2rem);
+  margin: 0 0 0.5rem;
 }
 .hero .tagline {
   font-family: var(--serif);
   font-style: italic;
   color: var(--muted);
-  font-size: 1.25rem;
+  font-size: 1.3rem;
+  margin: 0 auto 1.5rem;
+  max-width: 34rem;
+}
+.hero .lead {
+  color: var(--ink);
+  max-width: 34rem;
+  margin: 0 auto 0.5rem;
+}
+
+/* New cover art already carries its own watercolor background that blends
+   into the page, so it needs no frame — just a soft lift off the page. */
+.hero-cover {
+  display: block;
+  width: 100%;
+  max-width: 24rem;
+  height: auto;
+  margin: 1.5rem auto 0.5rem;
 }
 
 /* ---- Buttons --------------------------------------------------------- */

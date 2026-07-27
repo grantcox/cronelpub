@@ -10,14 +10,16 @@ intro: >
 ---
 
 <div class="hero">
-  <h1>{{ site.author }}</h1>
+  <h1 class="display">{{ site.author }}</h1>
   <p class="tagline">{{ site.tagline }}</p>
+  <p class="lead centered">{{ intro }}</p>
+
+  <img class="hero-cover" src="/assets/cover-with-background.jpg"
+       alt="{{ site.bookTitle }} — book cover" />
+
+  <p class="pull">{{ hook }}</p>
+
+  <p class="centered">
+    <a class="btn" href="/book/">Read about the book</a>
+  </p>
 </div>
-
-<p class="pull">{{ hook }}</p>
-
-<p class="lead centered">{{ intro }}</p>
-
-<p class="centered">
-  <a class="btn" href="/book/">Read about the book</a>
-</p>
