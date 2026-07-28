@@ -1,8 +1,8 @@
 ---
 layout: base.njk
-title: Contact
 permalink: /contact/
 description: Get in touch with Steven Chavin.
+title: Contact
 ---
 
 # Contact
