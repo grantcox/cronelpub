@@ -3,7 +3,7 @@ layout: base.njk
 permalink: /
 title: Home
 hook: You are never as alone as you think.
-intro: I'm a retired physicist living in Santa Barbara. Sleep in Heavenly Peace is my first novel — a philosophical mystery about memory, perception, and how much of what we call reality we actually control.
+intro: I'm a retired physicist living in Santa Barbara. Sleep in Heavenly Peace is my first novel — a philosophical mystery about our thoughts and the part of the Universe that is just beyond our perception.
 ---
 
 <div class="hero">
