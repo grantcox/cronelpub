@@ -64,6 +64,15 @@ collections:
           - { name: title, label: "Page heading", widget: string }
           - { name: body, label: "Contact text", widget: markdown }
 
+      - name: misc
+        label: "Misc page"
+        file: "src/misc.md"
+        fields:
+          - { name: layout, widget: hidden, default: "base.njk" }
+          - { name: permalink, widget: hidden, default: "/misc/" }
+          - { name: title, label: "Page heading", widget: string }
+          - { name: body, label: "Page text", widget: markdown, required: false }
+
   # ---- Site-wide details ---------------------------------------------
   - name: settings
     label: "Site details"
