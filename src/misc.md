@@ -15,3 +15,5 @@ If you think the trailer looks amateurish, you’d be correct.  I made the trai
 # The Santa Barbara County Courthouse
 
 I am a docent at the Santa Barbara County Courthouse.  Tripadvisor has declared that it is the most beautiful building in California.  They searched for the word “beautiful” in their reviews; counted them up and we had the most “beautiful”s in California.  Notre Dame in Paris and Sagrade Familia in Barcelona had more “beautiful”s, but more people go to those cities.  So, is it really fair?
+
+![](/assets/uploads/IMG_5265.jpeg)
