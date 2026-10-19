@@ -13,7 +13,7 @@ EVERY MONTH in Santa Barbara we have a thing called “First Thursday.”  Duri
 If you think the trailer looks amateurish, you’d be correct.  I made the trailer and have never done anything like that before.  I thought it would be a “fun” project.  It was fun and painful.  The song was made using SUNO.  The still images were made using ChatGPT.  For the video clips I used Veo 3.1.  After watching many YouTube videos and talking with Siri and Claude, I finally discovered that it was impossible for a normal person to use Veo 3.1 except by telling Google Flow that you wanted to use it.  I discovered many little things that you had to do – too many to recount here – and each video clip took between 5 and 10 tries before I would give up and decide it was good enough.  None of the video clips look like I had initially envisioned.  None.  That would be impossible using these tools.  Plus, objects would change their appearance or appear or disappear for no reason during the videos.  And the 8 second videos are a million times easier than the 16 second videos.  Sigh!  I may go back and fix little things.  In a short period of time, the technology will probably advance enough that you simply let your computer read your book and it’ll make a better trailer than you could ever do.
 
 <div style="position:relative; padding-bottom:56.25%; height:0; max-width:100%;">
-  <iframe src="https://player.vimeo.com/video/123456789"
+  <iframe src="https://player.vimeo.com/video/1237291765"
           style="position:absolute; top:0; left:0; width:100%; height:100%;"
           title="My video" frameborder="0"
           allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
